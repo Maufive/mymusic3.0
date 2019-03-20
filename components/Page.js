@@ -86,7 +86,7 @@ class Page extends Component {
 			<ThemeProvider theme={theme}>
 				<StyledPage>
 					<GlobalStyle />
-					<Jumbotron />
+					<Jumbotron setUser={this.props.setUser} />
 					{/* <Jumbotron setUser={setUser} /> */}
 					{this.props.children}
 				</StyledPage>

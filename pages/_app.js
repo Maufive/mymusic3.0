@@ -1,7 +1,5 @@
 import App, { Container } from "next/app";
-import UserProvider, {
-	UserConsumer
-} from "../components/UserContext";
+import UserProvider, { UserConsumer } from "../components/UserContext";
 import Page from "../components/Page";
 
 class MyApp extends App {
@@ -22,13 +20,9 @@ class MyApp extends App {
 				<UserProvider>
 					<UserConsumer>
 						{({ setUser, user }) => (
-              <Page>
-                <Component
-                  user={user}
-                  setUser={setUser}
-                  {...pageProps}
-                />
-              </Page>
+							<Page setUser={setUser}>
+								<Component user={user} {...pageProps} />
+							</Page>
 						)}
 					</UserConsumer>
 				</UserProvider>

@@ -19,21 +19,19 @@ class Jumbotron extends Component {
 		this.setState({ [e.target.name]: e.target.value });
 	};
 
-	searchUser = async e => {
+	searchUser = e => {
+		const { search } = this.state;
 		e.preventDefault();
-		await axios
+		axios
 			.get(
-				`//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=${
-					this.state.search
-				}&api_key=${process.env.GATSBY_API_KEY}&format=json`
+				`//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=${search}&api_key=${
+					process.env.GATSBY_API_KEY
+				}&format=json`
 			)
 			.then(response => {
-				const user = response.data.user;
-				this.setState({ search: "", user: response.data.user });
+				const { user } = response.data;
+				this.setState({ search: "", user });
 				this.props.setUser(user);
-				// navigate('/overview', {
-				// 	state: { user },
-				// });
 			})
 			.catch(error => console.log(error));
 	};
