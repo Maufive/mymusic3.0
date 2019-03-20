@@ -180,8 +180,8 @@ function (_Component) {
     _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, (_getPrototypeOf2 = Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Jumbotron)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "state", {
-      search: "",
-      user: null
+      search: "" // user: null // <--  Behövs ens denna när jag använder context?
+
     });
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "handleChange", function (e) {
@@ -191,13 +191,8 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "searchUser", function (e) {
       var search = _this.state.search;
       e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_9___default.a.get("//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=".concat(search, "&api_key=").concat(process.env.GATSBY_API_KEY, "&format=json")).then(function (response) {
-        var user = response.data.user;
-
-        _this.setState({
-          search: "",
-          user: user
-        });
+      axios__WEBPACK_IMPORTED_MODULE_9___default.a.get("//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=".concat(_this.state.search, "&api_key=").concat(process.env.GATSBY_API_KEY, "&format=json")).then(function (response) {
+        var user = response.data.user; // this.setState({ search: "", user });
 
         _this.props.setUser(user);
       }).catch(function (error) {
@@ -213,7 +208,7 @@ function (_Component) {
     value: function render() {
       var _React$createElement;
 
-      var user = this.state.user;
+      var search = this.state.search;
       return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_styles_JumbotronStyles__WEBPACK_IMPORTED_MODULE_11__["JumbotronStyles"], {
         __source: {
           fileName: _jsxFileName,
@@ -275,7 +270,7 @@ function (_Component) {
         name: "search",
         id: "search",
         required: true,
-        value: this.state.search,
+        value: search,
         onChange: this.handleChange
       }, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(_React$createElement, "required", true), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(_React$createElement, "__source", {
         fileName: _jsxFileName,

@@ -11,8 +11,8 @@ import HeadphonesIcon from "../svg/headphones.svg";
 
 class Jumbotron extends Component {
 	state = {
-		search: "",
-		user: null
+		search: ""
+		// user: null // <--  Behövs ens denna när jag använder context?
 	};
 
 	handleChange = e => {
@@ -24,20 +24,20 @@ class Jumbotron extends Component {
 		e.preventDefault();
 		axios
 			.get(
-				`//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=${search}&api_key=${
-					process.env.GATSBY_API_KEY
-				}&format=json`
+				`//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=${
+					this.state.search
+				}&api_key=${process.env.GATSBY_API_KEY}&format=json`
 			)
 			.then(response => {
 				const { user } = response.data;
-				this.setState({ search: "", user });
+				// this.setState({ search: "", user });
 				this.props.setUser(user);
 			})
 			.catch(error => console.log(error));
 	};
 
 	render() {
-		const { user } = this.state;
+		const { search } = this.state;
 		return (
 			<JumbotronStyles>
 				<div>
@@ -55,7 +55,7 @@ class Jumbotron extends Component {
 								name="search"
 								id="search"
 								required
-								value={this.state.search}
+								value={search}
 								onChange={this.handleChange}
 								required
 							/>
