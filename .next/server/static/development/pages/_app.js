@@ -484,7 +484,7 @@ function (_Component) {
     });
 
     _this.state = {
-      user: "Niklas"
+      user: null
     };
     return _this;
   }
