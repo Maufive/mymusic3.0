@@ -26,11 +26,11 @@ const Header = ({ user }) => {
 					<TunesIcon />
 					Songs
 				</NavLink>
-				<NavLink pathname="/artists" user={user}>
+				<NavLink path="/artists" user={user}>
 					<ArtistIcon />
 					Artists
 				</NavLink>
-				<NavLink pathname="/albums" user={user}>
+				<NavLink path="/albums" user={user}>
 					<AlbumIcon />
 					Albums
 				</NavLink>

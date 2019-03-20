@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { animated } from 'react-spring';
+import styled from "styled-components";
+import { animated } from "react-spring";
 
 export const HeaderStyles = styled.header`
 	min-width: 100px;
@@ -44,12 +44,13 @@ export const NavItem = styled(animated.div)`
 	flex-direction: column;
 	align-items: center;
 	font-size: 2rem;
-	color: ${props => (props.activeitem ? props.theme.green : props.theme.white)};
+	color: ${props => (props.active ? props.theme.green : props.theme.white)};
+	cursor: pointer;
 	svg {
 		transition: all 300ms ease-out;
 		height: 3rem;
 		width: 3rem;
-		fill: ${props => (props.activeitem ? props.theme.green : props.theme.white)};
+		fill: ${props => (props.active ? props.theme.green : props.theme.white)};
 	}
 
 	&:not(:last-child) {

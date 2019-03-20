@@ -244,7 +244,7 @@ var Header = function Header(_ref) {
     },
     __self: this
   }), "Songs"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_NavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    pathname: "/artists",
+    path: "/artists",
     user: user,
     __source: {
       fileName: _jsxFileName,
@@ -258,7 +258,7 @@ var Header = function Header(_ref) {
     },
     __self: this
   }), "Artists"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_NavLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    pathname: "/albums",
+    path: "/albums",
     user: user,
     __source: {
       fileName: _jsxFileName,
@@ -340,8 +340,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _styles_HeaderStyles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/HeaderStyles */ "./styles/HeaderStyles.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "./node_modules/next/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _styles_HeaderStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../styles/HeaderStyles */ "./styles/HeaderStyles.js");
 var _jsxFileName = "/Users/Maufive/Documents/mymusic4.0/components/NavLink.js";
+
 
 
 
@@ -351,26 +354,34 @@ var NavLink = function NavLink(_ref) {
   var children = _ref.children,
       user = _ref.user,
       path = _ref.path;
+  var lowercased = "/" + children[1].toLowerCase();
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 10
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: {
       pathname: path,
-      query: user
+      query: user.name
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 11
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_HeaderStyles__WEBPACK_IMPORTED_MODULE_3__["NavItem"], {
+  }, next_router__WEBPACK_IMPORTED_MODULE_3___default.a.route === lowercased ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_HeaderStyles__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
+    active: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 18
+    },
+    __self: this
+  }, children) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_HeaderStyles__WEBPACK_IMPORTED_MODULE_4__["NavItem"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
     },
     __self: this
   }, children)));
@@ -18928,10 +18939,10 @@ var Nav = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].nav.withConf
 var NavItem = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_spring__WEBPACK_IMPORTED_MODULE_1__["animated"].div).withConfig({
   displayName: "HeaderStyles__NavItem",
   componentId: "t2ud3q-2"
-})(["display:flex;flex-direction:column;align-items:center;font-size:2rem;color:", ";svg{transition:all 300ms ease-out;height:3rem;width:3rem;fill:", ";}&:not(:last-child){margin-bottom:5rem;}@media (max-width:1000px){font-size:1.5rem;}"], function (props) {
-  return props.activeitem ? props.theme.green : props.theme.white;
+})(["display:flex;flex-direction:column;align-items:center;font-size:2rem;color:", ";cursor:pointer;svg{transition:all 300ms ease-out;height:3rem;width:3rem;fill:", ";}&:not(:last-child){margin-bottom:5rem;}@media (max-width:1000px){font-size:1.5rem;}"], function (props) {
+  return props.active ? props.theme.green : props.theme.white;
 }, function (props) {
-  return props.activeitem ? props.theme.green : props.theme.white;
+  return props.active ? props.theme.green : props.theme.white;
 });
 var Avatar = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.withConfig({
   displayName: "HeaderStyles__Avatar",
