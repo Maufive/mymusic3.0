@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -856,10 +856,10 @@ var TopFive = function TopFive(_ref) {
     // config: config.gentle,
     from: {
       opacity: 0,
-      transform: 'translateY(25px)'
+      transform: "translateY(25px)"
     },
     to: {
-      transform: 'translateY(0px)',
+      transform: "translateY(0px)",
       opacity: 1
     }
   });
@@ -917,7 +917,7 @@ var TopFive = function TopFive(_ref) {
         lineNumber: 21
       },
       __self: this
-    }), ' ', data[index].playcount)));
+    }), " ", data[index].playcount)));
   })));
 };
 
@@ -2669,7 +2669,7 @@ var UserInfo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.with
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

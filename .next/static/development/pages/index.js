@@ -759,10 +759,10 @@ var TopFive = function TopFive(_ref) {
     // config: config.gentle,
     from: {
       opacity: 0,
-      transform: 'translateY(25px)'
+      transform: "translateY(25px)"
     },
     to: {
-      transform: 'translateY(0px)',
+      transform: "translateY(0px)",
       opacity: 1
     }
   });
@@ -820,7 +820,7 @@ var TopFive = function TopFive(_ref) {
         lineNumber: 21
       },
       __self: this
-    }), ' ', data[index].playcount)));
+    }), " ", data[index].playcount)));
   })));
 };
 
@@ -19046,7 +19046,7 @@ var UserInfo = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.wit
 
 /***/ }),
 
-/***/ 1:
+/***/ 3:
 /*!*******************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMaufive%2FDocuments%2Fmymusic4.0%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************/
@@ -19069,5 +19069,5 @@ module.exports = dll_9d2e7eb3ce4bb71fa337;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=index.js.map
