@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import UserLayout from "../components/User";
 import Overview from "../components/Overview";
 import { UserConsumer } from "../components/UserContext";
