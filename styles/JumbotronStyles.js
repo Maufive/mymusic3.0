@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const JumbotronStyles = styled.div`
 	display: flex;
@@ -8,13 +8,13 @@ export const JumbotronStyles = styled.div`
 		display: flex;
 		align-items: center;
 		h1 {
-			font-family: 'Sarala';
+			font-family: "Sarala";
 			font-weight: 700;
 		}
 		svg {
 			fill: ${props => props.theme.green};
-			height: 2.5rem;
-			width: 2.5rem;
+			height: 3rem;
+			width: 3rem;
 			margin-right: 1rem;
 		}
 	}
@@ -43,7 +43,7 @@ export const Searchform = styled.form`
 		display: flex;
 		align-items: center;
 
-		input[type='text'] {
+		input[type="text"] {
 			padding: 1rem 1.5rem;
 			font-size: 2rem;
 			background: ${props => props.theme.white};
@@ -77,7 +77,7 @@ export const Searchform = styled.form`
 
 export const Searchbutton = styled.button`
 	outline: none;
-	background: ${props => (props.primary ? props.theme.green : 'transparent')};
+	background: ${props => (props.primary ? props.theme.green : "transparent")};
 	border: 1px solid ${props => props.theme.green};
 	border-radius: 0 5px 5px 0;
 	font-size: 2rem;
