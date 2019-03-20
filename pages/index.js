@@ -13,23 +13,9 @@ const IndexPage = ({}) => {
 		from: { opacity: 0, transform: "translateY(100px)" }
 	});
 	return (
-		<UserConsumer>
-			{({ user }) => {
-				if (user) {
-					return (
-						<UserLayout user={user}>
-							<Overview user={user} />
-						</UserLayout>
-					);
-				} else {
-					return (
-						<IndexStyles>
-							<Title style={spring}>Welcome to mymusic!</Title>
-						</IndexStyles>
-					);
-				}
-			}}
-		</UserConsumer>
+		<IndexStyles>
+			<Title style={spring}>Welcome to mymusic!</Title>
+		</IndexStyles>
 	);
 };
 

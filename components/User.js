@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Header from "./Header";
+import { UserConsumer } from "../components/UserContext";
 
 const UserLayoutStyle = styled.div`
 	display: flex;
@@ -11,9 +12,9 @@ const UserLayoutStyle = styled.div`
 	}
 `;
 
-const UserLayout = ({ children, user }) => (
+const UserLayout = ({ children }) => (
 	<UserLayoutStyle>
-		<Header user={user} />
+		<UserConsumer>{({ user }) => <Header user={user} />}</UserConsumer>
 		{children}
 	</UserLayoutStyle>
 );

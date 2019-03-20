@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import Router from "next/router";
 
 const UserContext = React.createContext();
 
@@ -11,18 +11,19 @@ class UserProvider extends Component {
 		};
 	}
 
-	componentDidMount() {
-		this.getUser();
-	}
-
-	setUser = obj => {
-		this.setState({
+	setUser = async obj => {
+		await this.setState({
 			user: obj
 		});
+		this.redirectUser();
 	};
 
-	getUser = () => {
-		// request user
+	redirectUser = async () => {
+		const { user } = this.state;
+		Router.push({
+			pathname: "/overview",
+			query: user.name
+		});
 	};
 
 	render() {
