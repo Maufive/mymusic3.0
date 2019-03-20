@@ -26,7 +26,7 @@ class Jumbotron extends Component {
 			.get(
 				`//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=${
 					this.state.search
-				}&api_key=${process.env.GATSBY_API_KEY}&format=json`
+				}&api_key=${process.env.API_KEY}&format=json`
 			)
 			.then(response => {
 				const { user } = response.data;
