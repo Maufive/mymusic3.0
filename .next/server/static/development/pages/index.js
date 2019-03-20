@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -395,11 +395,13 @@ var Animation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes
 var Spinner = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "Loading__Spinner",
   componentId: "sc-156ap7d-0"
-})(["margin:0 auto;display:inline-block;width:50px;height:50px;border:3px solid rgba(255,255,255,0.3);border-radius:50%;border-top-color:green;animation:", " 1s ease-in-out infinite;-webkit-animation:", " 1s ease-in-out infinite;top:50%;left:50%;right:auto;bottom:auto;"], Animation, Animation);
+})(["margin:0 auto;display:inline-block;width:50px;height:50px;border:3px solid rgba(255,255,255,0.3);border-radius:50%;border-top-color:", ";animation:", " 1s ease-in-out infinite;-webkit-animation:", " 1s ease-in-out infinite;top:50%;left:50%;right:auto;bottom:auto;"], function (props) {
+  return props.theme.green;
+}, Animation, Animation);
 var SmallSpinner = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(Spinner).withConfig({
   displayName: "Loading__SmallSpinner",
   componentId: "sc-156ap7d-1"
-})(["width:15px;height:15px;"]);
+})(["width:30px;height:30px;"]);
 var Loading = function Loading() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Spinner, {
     __source: {
@@ -2669,7 +2671,7 @@ var UserInfo = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.with
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

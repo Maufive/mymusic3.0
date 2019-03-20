@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { PeriodNavigation } from '../components/PeriodNavigation';
-import { SongStyles, Songlist } from '../styles/SongsStyles';
-import { Button } from '../styles/Button';
-import PlayIcon from '../svg/play.svg';
+import React, { Component } from "react";
+import axios from "axios";
+import { PeriodNavigation } from "./PeriodNavigation";
+import { Loading, SmallLoading } from "../components/Loading";
+import { SongStyles, Songlist } from "../styles/SongsStyles";
+import { Button } from "../styles/Button";
+import PlayIcon from "../svg/play.svg";
 
 class Songs extends Component {
 	state = {
 		songs: null,
-		period: '7day',
-		limit: '20',
+		period: "7day",
+		limit: "20",
 		loading: false,
-		page: 1,
+		page: 1
 	};
 
 	componentDidMount() {
@@ -20,14 +21,13 @@ class Songs extends Component {
 
 	getSongs = async () => {
 		const username = this.props.user.name;
-		console.log(username);
 		const { period, limit, page } = this.state;
 		await this.setState({ loading: true });
 		await axios
 			.get(
 				`//ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user=${username}&api_key=${
-					process.env.GATSBY_API_KEY
-				}&limit=${limit}&page=${page}&period=${period}&format=json`,
+					process.env.API_KEY
+				}&limit=${limit}&page=${page}&period=${period}&format=json`
 			)
 			.then(response => {
 				let oldstate;
@@ -38,7 +38,7 @@ class Songs extends Component {
 				this.setState({
 					songs: oldstate || response.data.toptracks.track,
 					page: page + 1,
-					loading: false,
+					loading: false
 				});
 			})
 			.catch(error => console.log(error));
@@ -46,18 +46,21 @@ class Songs extends Component {
 
 	handleChange = async e => {
 		e.preventDefault();
-		const period = e.target.getAttribute('value');
+		const period = e.target.getAttribute("value");
 		await this.setState({ period, songs: null, page: 1 });
 		this.getSongs();
 	};
 
+	// Sätt ett loading state när man hämtar fler låtar så man vet att komponenten laddar när man trycker
+	// på kanppen eller byter period.
+
 	render() {
-		const { songs } = this.state;
+		const { songs, period, loading } = this.state;
 		return (
 			<SongStyles>
-				<PeriodNavigation location={this.state.period} handleChange={this.handleChange} />
+				<PeriodNavigation location={period} handleChange={this.handleChange} />
 				<div>
-					{songs && (
+					{songs ? (
 						<Songlist>
 							{songs.map(song => (
 								<li key={song.name}>
@@ -73,10 +76,16 @@ class Songs extends Component {
 									</a>
 								</li>
 							))}
-							<Button primary onClick={() => this.getSongs()}>
-								Show more
-							</Button>
+							{loading ? (
+								<SmallLoading />
+							) : (
+								<Button primary onClick={() => this.getSongs()}>
+									Show more
+								</Button>
+							)}
 						</Songlist>
+					) : (
+						<Loading />
 					)}
 				</div>
 			</SongStyles>

@@ -1,25 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Layout from '../layout/index';
-import UserLayout from '../layout/User';
-import SEO from '../components/seo';
-import Songs from '../components/songs';
+import React from "react";
+import UserLayout from "../components/User";
+import { UserConsumer } from "../components/UserContext";
+import Songs from "../components/Songs";
 
-const SongsPage = ({ location }) => (
-  <Layout location={location}>
-    <SEO title="Songs" keywords={['gatsby', 'application', 'react']} />
-    <UserLayout location={location} user={location.state.user}>
-      {/* <Songs user={location.state.user} /> */}
-    </UserLayout>
-  </Layout>
+const SongsPage = () => (
+	<UserConsumer>
+		{({ user }) => (
+			<UserLayout>
+				<Songs user={user} />
+			</UserLayout>
+		)}
+	</UserConsumer>
 );
 
 export default SongsPage;
-
-SongsPage.propTypes = {
-  location: PropTypes.object,
-};
-
-SongsPage.defaultProps = {
-  location: {},
-};

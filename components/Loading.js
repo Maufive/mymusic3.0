@@ -11,7 +11,7 @@ const Spinner = styled.div`
 	height: 50px;
 	border: 3px solid rgba(255, 255, 255, 0.3);
 	border-radius: 50%;
-	border-top-color: green;
+	border-top-color: ${props => props.theme.green};
 	animation: ${Animation} 1s ease-in-out infinite;
 	-webkit-animation: ${Animation} 1s ease-in-out infinite;
 	top: 50%;
@@ -21,8 +21,8 @@ const Spinner = styled.div`
 `;
 
 const SmallSpinner = styled(Spinner)`
-	width: 15px;
-	height: 15px;
+	width: 30px;
+	height: 30px;
 `;
 
 export const Loading = () => <Spinner />;

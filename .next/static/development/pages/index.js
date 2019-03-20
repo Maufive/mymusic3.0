@@ -299,11 +299,13 @@ var Animation = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["keyframes
 var Spinner = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Loading__Spinner",
   componentId: "sc-156ap7d-0"
-})(["margin:0 auto;display:inline-block;width:50px;height:50px;border:3px solid rgba(255,255,255,0.3);border-radius:50%;border-top-color:green;animation:", " 1s ease-in-out infinite;-webkit-animation:", " 1s ease-in-out infinite;top:50%;left:50%;right:auto;bottom:auto;"], Animation, Animation);
+})(["margin:0 auto;display:inline-block;width:50px;height:50px;border:3px solid rgba(255,255,255,0.3);border-radius:50%;border-top-color:", ";animation:", " 1s ease-in-out infinite;-webkit-animation:", " 1s ease-in-out infinite;top:50%;left:50%;right:auto;bottom:auto;"], function (props) {
+  return props.theme.green;
+}, Animation, Animation);
 var SmallSpinner = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(Spinner).withConfig({
   displayName: "Loading__SmallSpinner",
   componentId: "sc-156ap7d-1"
-})(["width:15px;height:15px;"]);
+})(["width:30px;height:30px;"]);
 var Loading = function Loading() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Spinner, {
     __source: {
@@ -19046,7 +19048,7 @@ var UserInfo = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.wit
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*******************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2FMaufive%2FDocuments%2Fmymusic4.0%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************/
@@ -19069,5 +19071,5 @@ module.exports = dll_9d2e7eb3ce4bb71fa337;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]));;
+},[[4,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=index.js.map
