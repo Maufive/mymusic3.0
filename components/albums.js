@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { PeriodNavigation } from '../components/PeriodNavigation';
-import { SongStyles, Songlist } from '../styles/SongsStyles';
-import { Button } from '../styles/Button';
-import PlayIcon from '../svg/play.svg';
+import React, { Component } from "react";
+import axios from "axios";
+import { Loading, SmallLoading } from "../components/Loading";
+import { PeriodNavigation } from "./PeriodNavigation";
+import { SongStyles, Songlist } from "../styles/SongsStyles";
+import { Button } from "../styles/Button";
+import PlayIcon from "../svg/play.svg";
 
 class Albums extends Component {
 	state = {
 		albums: null,
-		period: '7day',
-		limit: '20',
+		period: "7day",
+		limit: "20",
 		loading: false,
-		page: 1,
+		page: 1
 	};
 
 	componentDidMount() {
@@ -25,8 +26,8 @@ class Albums extends Component {
 		await axios
 			.get(
 				`//ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=${username}&api_key=${
-					process.env.GATSBY_API_KEY
-				}&limit=${limit}&page=${page}&period=${period}&format=json`,
+					process.env.API_KEY
+				}&limit=${limit}&page=${page}&period=${period}&format=json`
 			)
 			.then(response => {
 				let oldstate;
@@ -37,7 +38,7 @@ class Albums extends Component {
 				this.setState({
 					albums: oldstate || response.data.topalbums.album,
 					page: page + 1,
-					loading: false,
+					loading: false
 				});
 			})
 			.catch(error => console.log(error));
@@ -45,18 +46,18 @@ class Albums extends Component {
 
 	handleChange = async e => {
 		e.preventDefault();
-		const period = e.target.getAttribute('value');
+		const period = e.target.getAttribute("value");
 		await this.setState({ period, albums: null, page: 1 });
 		this.getAlbums();
 	};
 
 	render() {
-		const { albums } = this.state;
+		const { albums, period, loading } = this.state;
 		return (
 			<SongStyles>
-				<PeriodNavigation location={this.state.period} handleChange={this.handleChange} />
+				<PeriodNavigation location={period} handleChange={this.handleChange} />
 				<div>
-					{albums && (
+					{albums ? (
 						<Songlist>
 							{albums.map(album => (
 								<li key={album.name}>
@@ -70,10 +71,16 @@ class Albums extends Component {
 									</a>
 								</li>
 							))}
-							<Button primary onClick={() => this.getAlbums()}>
-								Show more
-							</Button>
+							{loading ? (
+								<SmallLoading />
+							) : (
+								<Button primary onClick={() => this.getAlbums()}>
+									Show more
+								</Button>
+							)}
 						</Songlist>
+					) : (
+						<Loading />
 					)}
 				</div>
 			</SongStyles>
