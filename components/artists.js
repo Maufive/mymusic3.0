@@ -19,6 +19,12 @@ class Artists extends Component {
 		this.getArtists();
 	}
 
+	componentDidUpdate(prevProps) {
+		if (this.props.user !== prevProps.user) {
+			this.getArtists();
+		}
+	}
+
 	getArtists = async () => {
 		const username = this.props.user.name;
 		const { period, limit, page } = this.state;

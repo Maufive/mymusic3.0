@@ -19,6 +19,12 @@ class Albums extends Component {
 		this.getAlbums();
 	}
 
+	componentDidUpdate(prevProps) {
+		if (this.props.user !== prevProps.user) {
+			this.getAlbums();
+		}
+	}
+
 	getAlbums = async () => {
 		const username = this.props.user.name;
 		const { period, limit, page } = this.state;

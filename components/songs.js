@@ -19,6 +19,12 @@ class Songs extends Component {
 		this.getSongs();
 	}
 
+	componentDidUpdate(prevProps) {
+		if (this.props.user !== prevProps.user) {
+			this.getSongs();
+		}
+	}
+
 	getSongs = async () => {
 		const username = this.props.user.name;
 		const { period, limit, page } = this.state;

@@ -22,6 +22,12 @@ class Overview extends Component {
 		this.getData();
 	}
 
+	componentDidUpdate(prevProps) {
+		if (this.props.user !== prevProps.user) {
+			this.getData();
+		}
+	}
+
 	getSongs = async () => {
 		this.setState({ loading: true });
 		const username = this.props.user.name;
