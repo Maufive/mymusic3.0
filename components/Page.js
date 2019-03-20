@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import Jumbotron from "../components/Jumbotron";
-import { UserConsumer } from "./UserContext";
 
 const theme = {
 	green: "#1EB97F",
@@ -28,7 +27,7 @@ const StyledPage = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Sarala|Lato:700');
+  @import url('https://fonts.googleapis.com/css?family=Sarala|Lato:700|Raleway');
 
   html {
     box-sizing: border-box;

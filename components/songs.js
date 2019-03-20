@@ -51,9 +51,6 @@ class Songs extends Component {
 		this.getSongs();
 	};
 
-	// Sätt ett loading state när man hämtar fler låtar så man vet att komponenten laddar när man trycker
-	// på kanppen eller byter period.
-
 	render() {
 		const { songs, period, loading } = this.state;
 		return (

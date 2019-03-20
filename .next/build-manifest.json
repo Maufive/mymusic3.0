@@ -15,19 +15,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/next/dist/pages/_error": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/songs": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/": [
+    "/artists": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

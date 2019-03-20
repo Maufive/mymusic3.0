@@ -1,31 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Layout from '../layout/index';
-import UserLayout from '../layout/User';
-import SEO from '../components/seo';
-import Artists from '../components/artists';
-import { UserConsumer } from '../components/UserProvider';
+import React from "react";
+import UserLayout from "../components/User";
+import Artists from "../components/Artists";
+import { UserConsumer } from "../components/UserContext";
 
-const ArtistsPage = ({ location }) => (
-  <Layout>
-    <SEO title="Artists" keywords={['artists', ' annat', 'mer keywords']} />
-    <UserConsumer>
-      {({ user }) => (
-        <UserLayout location={location} user={user}>
-          <Artists user={user} />
-          {/* <Artists user={location.state.user} context={user} /> */}
-        </UserLayout>
-      )}
-    </UserConsumer>
-  </Layout>
+const ArtistsPage = () => (
+	<UserConsumer>
+		{({ user }) => (
+			<UserLayout>
+				<Artists user={user} />
+			</UserLayout>
+		)}
+	</UserConsumer>
 );
 
 export default ArtistsPage;
-
-ArtistsPage.propTypes = {
-  location: PropTypes.object,
-};
-
-ArtistsPage.defaultProps = {
-  location: {},
-};

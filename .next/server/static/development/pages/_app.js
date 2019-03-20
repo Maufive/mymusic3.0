@@ -331,7 +331,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _components_Jumbotron__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Jumbotron */ "./components/Jumbotron.js");
-/* harmony import */ var _UserContext__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./UserContext */ "./components/UserContext.js");
 
 
 
@@ -341,7 +340,7 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/Maufive/Documents/mymusic4.0/components/Page.js";
 
 function _templateObject() {
-  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  @import url('https://fonts.googleapis.com/css?family=Sarala|Lato:700');\n\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    font-family: \"Lato\", Arial, Helvetica, sans-serif, sans-serif;\n\t\t-webkit-font-smoothing: antialiased !important;\n    text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);\n    padding: 0;\n    margin: 0;\n    background: linear-gradient(180deg, #4B6CB7 0%, #182848 100%);\n  }\n  \n  *, *:before, *:after {\n    box-sizing: inherit;\n    \n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n\t\tline-height: 2;\n  }\n\n  h1, h2, h3, h4 {\n    margin: 0;\n    margin-block-start: 0;\n    margin-block-end: 0;\n  }\n\n  h1 {\n    font-family: \"Lato\" !important;\n  }\n\n  h2, h3 {\n    font-family: \"Sarala\" !important;\n  }\n\n  a, a:visited {\n    color: ", ";\n    text-decoration: none;\n  }\n\n  a {\n    transition: all 300ms ease-out;\n  }\n\n  a:hover {\n    color: ", ";\n  }\n"]);
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_5__["default"])(["\n  @import url('https://fonts.googleapis.com/css?family=Sarala|Lato:700|Raleway');\n\n  html {\n    box-sizing: border-box;\n    font-size: 10px;\n    font-family: \"Lato\", Arial, Helvetica, sans-serif, sans-serif;\n\t\t-webkit-font-smoothing: antialiased !important;\n    text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005);\n    padding: 0;\n    margin: 0;\n    background: linear-gradient(180deg, #4B6CB7 0%, #182848 100%);\n  }\n  \n  *, *:before, *:after {\n    box-sizing: inherit;\n    \n  }\n  body {\n    padding: 0;\n    margin: 0;\n    font-size: 1.5rem;\n\t\tline-height: 2;\n  }\n\n  h1, h2, h3, h4 {\n    margin: 0;\n    margin-block-start: 0;\n    margin-block-end: 0;\n  }\n\n  h1 {\n    font-family: \"Lato\" !important;\n  }\n\n  h2, h3 {\n    font-family: \"Sarala\" !important;\n  }\n\n  a, a:visited {\n    color: ", ";\n    text-decoration: none;\n  }\n\n  a {\n    transition: all 300ms ease-out;\n  }\n\n  a:hover {\n    color: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -349,7 +348,6 @@ function _templateObject() {
 
   return data;
 }
-
 
 
 
@@ -396,26 +394,26 @@ function (_Component) {
         theme: theme,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 85
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(StyledPage, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 87
+          lineNumber: 86
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(GlobalStyle, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 87
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_Jumbotron__WEBPACK_IMPORTED_MODULE_8__["default"], {
         setUser: this.props.setUser,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 88
         },
         __self: this
       }), this.props.children));
