@@ -30,7 +30,7 @@ class Jumbotron extends Component {
 			)
 			.then(response => {
 				const { user } = response.data;
-				// this.setState({ search: "", user });
+				this.setState({ search: "" });
 				this.props.setUser(user);
 			})
 			.catch(error => console.log(error));
@@ -42,7 +42,7 @@ class Jumbotron extends Component {
 			<JumbotronStyles>
 				<div>
 					<div>
-						<Link to="/">
+						<Link href="/">
 							<span>
 								<HeadphonesIcon /> <h1>mymusic</h1>
 							</span>

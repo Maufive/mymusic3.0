@@ -15,7 +15,7 @@ const IndexPage = ({}) => {
 			{({ user }) => {
 				return (
 					<IndexStyles>
-						<Title style={spring}>Welcome to mymusic, {user}!</Title>
+						<Title style={spring}>Welcome to mymusic, {user.name}!</Title>
 					</IndexStyles>
 				);
 			}}

@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -563,7 +563,7 @@ var IndexPage = function IndexPage(_ref) {
         lineNumber: 18
       },
       __self: this
-    }, "Welcome to mymusic, ", user, "!"));
+    }, "Welcome to mymusic, ", user.name, "!"));
   });
 };
 
@@ -599,7 +599,7 @@ var Title = styled_components__WEBPACK_IMPORTED_MODULE_0___default()(react_sprin
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

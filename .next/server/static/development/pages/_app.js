@@ -191,8 +191,12 @@ function (_Component) {
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_5__["default"])(_this), "searchUser", function (e) {
       var search = _this.state.search;
       e.preventDefault();
-      axios__WEBPACK_IMPORTED_MODULE_9___default.a.get("//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=".concat(_this.state.search, "&api_key=").concat(process.env.GATSBY_API_KEY, "&format=json")).then(function (response) {
-        var user = response.data.user; // this.setState({ search: "", user });
+      axios__WEBPACK_IMPORTED_MODULE_9___default.a.get("//ws.audioscrobbler.com//2.0/?method=user.getinfo&user=".concat(_this.state.search, "&api_key=").concat("3bd2bb523f1e2d97d92147aa51b6a9fb", "&format=json")).then(function (response) {
+        var user = response.data.user;
+
+        _this.setState({
+          search: ""
+        });
 
         _this.props.setUser(user);
       }).catch(function (error) {
@@ -228,7 +232,7 @@ function (_Component) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_10___default.a, {
-        to: "/",
+        href: "/",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 45
