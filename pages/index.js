@@ -1,9 +1,11 @@
 import React from "react";
 import { useSpring, config } from "react-spring";
-import { IndexStyles, Title } from "../styles/IndexStyles";
-import { UserConsumer } from "../components/UserContext";
-import UserLayout from "../components/User";
-import Overview from "../components/Overview";
+import {
+	IndexStyles,
+	Title,
+	BrowserContainer,
+	Browser
+} from "../styles/IndexStyles";
 
 const IndexPage = ({}) => {
 	const spring = useSpring({
@@ -15,6 +17,20 @@ const IndexPage = ({}) => {
 	return (
 		<IndexStyles>
 			<Title style={spring}>Welcome to mymusic!</Title>
+			<p>
+				Use the searchbar in the top right to search for your LastFM username!
+			</p>
+			<BrowserContainer>
+				<Browser>
+					<span />
+					<span />
+					<span />
+				</Browser>
+				<img
+					src="https://res.cloudinary.com/dcgb0fhog/image/upload/v1553126008/mymusic_printscreen.png"
+					alt=""
+				/>
+			</BrowserContainer>
 		</IndexStyles>
 	);
 };
